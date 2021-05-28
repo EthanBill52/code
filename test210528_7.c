@@ -3,20 +3,20 @@
 
 #include<stdio.h>
 #include<string.h>
-// µİ¹éÇóÊıµÄÃ¿Î»Ö®ºÍ
+// é€’å½’æ±‚æ•°çš„æ¯ä½ä¹‹å’Œ
 int digitSum1(unsigned int num) {
 	if (num == 0) {
 		return 0;
 	}
-	// ¸öÎ» + µİ¹é
-	return num % 10 + digitSum2(num / 10);
+	// ä¸ªä½ + é€’å½’
+	return num % 10 + digitSum1(num / 10);
 }
-// ·Çµİ¹éÇóÊıµÄÃ¿Î»Ö®ºÍ
+// éé€’å½’æ±‚æ•°çš„æ¯ä½ä¹‹å’Œ
 int digitSum2(unsigned int num) {
 	int sum = 0;
-	// È¡³öÃ¿Ò»Î»£¬½øĞĞÀÛ¼Ó¼´¿É
+	// å–å‡ºæ¯ä¸€ä½ï¼Œè¿›è¡Œç´¯åŠ å³å¯
 	while (num != 0) {
-		// È¡³ö¸öÎ»
+		// å–å‡ºä¸ªä½
 		sum += num % 10;
 		num /= 10;
 	}
